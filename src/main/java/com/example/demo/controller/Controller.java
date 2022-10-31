@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.entity.Subject;
 import com.example.demo.entity.User;
 import com.example.demo.entity.Userdetail;
 import com.example.demo.service.SubjectService;
@@ -40,5 +41,13 @@ public class Controller {
 	@RequestMapping(value = "/userInfo", method = RequestMethod.GET)
 	public Userdetail userInfo(User user) {
 		return userdetailService.findUserInfoByUser(user);
+	}
+	@RequestMapping(value = "/subjectList", method = RequestMethod.GET)
+	public List<Subject> subject() {
+		return subjectService.findAll();
+	}
+	@RequestMapping(value = "/subject", method = RequestMethod.GET)
+	public List<Subject> subject(User user) {
+		return subjectService.findByUser(user);
 	}
 }
