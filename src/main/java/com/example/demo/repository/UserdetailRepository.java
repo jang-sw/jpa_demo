@@ -9,7 +9,7 @@ import com.example.demo.entity.User;
 import com.example.demo.entity.Userdetail;
 
 @Repository
-public interface UserdetailRepository extends JpaRepository<Userdetail, Long>  {
+public interface UserdetailRepository extends JpaRepository<Userdetail, Integer>  {
 	
 	@EntityGraph(attributePaths = {"user"}, type = EntityGraphType.FETCH)
 	public Userdetail findByUser(User user);

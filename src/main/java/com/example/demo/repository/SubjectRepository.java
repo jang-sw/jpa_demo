@@ -11,7 +11,7 @@ import com.example.demo.entity.Subject;
 import com.example.demo.entity.User;
 
 @Repository
-public interface SubjectRepository extends JpaRepository<Subject, Long>  {
+public interface SubjectRepository extends JpaRepository<Subject, Integer>  {
 
 	@EntityGraph(attributePaths = {"user"}, type = EntityGraphType.FETCH)
 	public List<Subject> findAll();
